@@ -1,50 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #6a0dad; /* Purple background */
-            color: #ffffff; /* White text */
-        }
-        .container {
-            text-align: center;
-            padding: 20px;
-            border: 2px solid #ffffff;
-            border-radius: 10px;
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        h1 {
-            font-size: 3em;
-            margin-bottom: 0.5em;
-        }
-        p {
-            font-size: 1.5em;
-            margin-top: 0;
-        }
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 2em;
-            }
-            p {
-                font-size: 1.2em;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Purple FPGA</title>
+  <style>
+    :root {
+      --bg: #1c1124;
+      --accent: #eac8ff;
+      --text: #ffffff;
+      --muted: #aaa0b6;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      background: radial-gradient(circle at top right, #391f53 0%, #1c1124 80%);
+    }
+
+    header h1 {
+      font-size: 4rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      max-width: 600px;
+      color: var(--muted);
+    }
+
+    nav {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #2d1b3eaa;
+      padding: 0.6rem 1.5rem;
+      border-radius: 50px;
+      backdrop-filter: blur(10px);
+      z-index: 100;
+    }
+
+    nav a {
+      color: var(--accent);
+      text-decoration: none;
+      margin: 0 1rem;
+      font-size: 0.9rem;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      color: var(--accent);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--accent);
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 1rem;
+    }
+
+    li {
+      margin: 1rem 0;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    li::before {
+      content: '➤';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 10px 20px;
+      background-color: var(--accent);
+      color: #1c1124;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .contact-button:hover {
+      background-color: #d9a6ff;
+    }
+
+    .social-links {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .social-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--muted);
+      border-radius: 20px;
+      transition: all 0.3s;
+    }
+
+    .social-links a:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>We are cooking and will serve it soon</h1>
-        <p>Stay tuned for something amazing!</p>
+  <nav>
+    <a href="#projects">Projects</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header>
+    <h1>PurpleFPGA</h1>
+    <p>We're in stealth mode, quietly building tools and exploring what's next for FPGA-based hardware and development.</p>
+  </header>
+
+  <section id="projects">
+    <h2>What We're Exploring</h2>
+    <ul>
+      <li>Multi-FPGA design and orchestration</li>
+      <li>Application-driven FPGA hardware systems</li>
+      <li>Custom emulation and test platforms</li>
+      <li>Creative analog-digital FPGA integration</li>
+      <li>Reusable and modular FPGA IPs</li>
+    </ul>
+  </section>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      Purple FPGA is a young startup in stealth, exploring how to make FPGA development more accessible and useful.<br>
+      We're engineers and builders focused on tools, hardware, and simplicity.
+    </p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Want to collaborate, chat, or share thoughts?</p>
+    <a href="mailto:contact@purplefpga.com" class="contact-button">Email Us</a>
+    <div class="social-links">
+      <a href="https://x.com/purplefpga" target="_blank">Follow us on X</a>
     </div>
+  </section>
+
+  <footer>
+    © 2025 Purple FPGA. Building quietly, thinking boldly.
+  </footer>
 </body>
 </html>
